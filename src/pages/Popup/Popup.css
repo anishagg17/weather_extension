@@ -1,0 +1,43 @@
+h1 {
+  /* position: absolute; */
+  top: 10%;
+}
+
+input {
+  flex: 3;
+  min-height: 20px;
+  box-sizing: border-box;
+  padding: 4px 15px;
+  border: none;
+  font-size: 13px;
+  color: aliceblue;
+  background-color: #424242;
+  border-bottom: 1px solid rgba(81, 81, 81, 1);
+}
+
+input :focus {
+  outline-color: rgba(81, 81, 81, 1);
+}
+.flex {
+  width: 100%;
+  display: flex;
+}
+.desc {
+  font-size: 15px;
+  border-bottom: 1px solid rgba(81, 81, 81, 1);
+  border-top: 1px solid rgba(81, 81, 81, 1);
+  padding: 10px;
+  margin-top: 15px;
+}
+span {
+  color: rgb(200, 80, 43);
+}
+button {
+  font-size: 20px;
+  flex: 1;
+  margin: 0px 10px;
+  border: 2px solid rgb(20, 80, 211);
+  background: transparent;
+  color: rgb(20, 80, 211);
+  border-radius: 6px;
+}
