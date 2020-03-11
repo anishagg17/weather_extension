@@ -13,13 +13,16 @@ class Popup extends Component {
   getWeather = async (e) => {
     e.preventDefault();
     const { country } = this.state;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${country},IN&APPID=${Api_Key}&units=metric`;
+    const url = `https://anish-weather-app.herokuapp.com/weather?address=${country}`
+//           `https://api.openweathermap.org/data/2.5/weather?q=${country},IN&APPID=${Api_Key}&units=metric`;
     let res = await fetch(url);
     this.setState({ res });
     res = await res.json();
     console.log('res', res);
-    this.setState({ weather: res.weather[0].main });
-    this.setState({ temp: res.main.temp });
+
+    this.setState({ weather: res.data });
+//     this.setState({ weather: res.weather[0].main });
+//     this.setState({ temp: res.main.temp });
   };
   render() {
     const { country, weather, temp } = this.state;
@@ -43,9 +46,9 @@ class Popup extends Component {
             <div>
               Weather : <span>{weather}</span>
             </div>
-            <div>
+            {temp && <div>
               Temperature : <span>{temp}</span> ˚C
-            </div>
+            </div> }
           </div>
         )}
       </>
